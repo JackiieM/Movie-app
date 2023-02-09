@@ -1,7 +1,7 @@
 const express = require('express');
 const axios = require('axios');
 const cors = require('cors');
-// I created a .env file to store and hide the API key
+
 require('dotenv').config();
 
 const app = express();
