@@ -49,4 +49,4 @@ Me enfoqué en que la renderización del componente fuera correcta y que se enco
 
 ------------
 
-También realicé un deployment de la app en Netlify que se puede ver [aquí](http://https://jacqueline-movie-app.netlify.app/), y se encuentra funcionando con su propio back desde Render  [aquí](http://https://movie-app-jacqueline.onrender.com/search?query=cambiar).
+También realicé un deployment de la app en Netlify que se puede ver [aquí](https://jacqueline-movie-app.netlify.app/), y se encuentra funcionando con su propio back desde Render  [aquí](https://movie-app-jacqueline.onrender.com/search?query=cambiar).
