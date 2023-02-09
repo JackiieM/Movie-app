@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from 'axios';
 
 const App = () => {
@@ -14,16 +14,14 @@ const App = () => {
             setNoData(true);
         } else {
             setNoData(false);
-            try {
-                const {data: {results, total_results}} = axios.request('http://localhost:8080/search', {params: {query: query}})
-                setMovies(results)
-                setTotal(total_results)
-            } catch(err) {
-                console.error(err)
-            }
+            const response = await axios.request('http://localhost:8080/search', {params: {query: query}})
+            .then(res => {
+                setMovies(res.data.results)
+                setTotal(res.data.total_results)
+            })
+            .catch(err => console.error(err));
         };
     };
-
     const searchMovies = (e) => {
         e.preventDefault();
         fetchMovies(query)
