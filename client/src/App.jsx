@@ -14,7 +14,7 @@ const App = () => {
             setNoData(true);
         } else {
             setNoData(false);
-            const response = await axios.request('http://localhost:8080/search', {params: {query: query}})
+            const response = await axios.request('https://movie-app-jacqueline.onrender.com/search', {params: {query: query}})
             .then(res => {
                 setMovies(res.data.results)
                 setTotal(res.data.total_results)
