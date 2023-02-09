@@ -46,3 +46,7 @@ Para realizar los test unitarios del cliente, utilicé Jest, Testing Library, y 
 
 Me enfoqué en que la renderización del componente fuera correcta y que se encontraran en el documento las distintas partes de este simulando la interacción con el usuario utilizando userEvent: 
 [![](https://cdn.discordapp.com/attachments/704073351051870209/1073314507532795984/image.png)](http:/https://cdn.discordapp.com/attachments/704073351051870209/1073314507532795984/image.png/)
+
+------------
+
+También realicé un deployment de la app en Netlify que se puede ver [aquí](http://https://jacqueline-movie-app.netlify.app/ "aquí"), y se encuentra funcionando con su propio back desde Render  [aquí](http://https://movie-app-jacqueline.onrender.com/search?query=cambiar "aquí").
