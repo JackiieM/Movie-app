@@ -1,0 +1,47 @@
+#formContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+input {
+    width: 30%;
+    height: 2rem;
+    margin: 2%;
+}
+
+button {
+    width: 20%;
+    height: 2.5rem;
+    font-size: 1.2rem;
+}
+
+#warning {
+    display: flex;
+    justify-content: center;
+    color: red;
+    font-size: 1.2rem;
+}
+
+#moviesContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.movieCard {
+    display: flex;
+    flex-direction: row;
+    gap: 2%;
+    margin: 2%;
+    font-size: 1.2rem;
+}
+
+.movieCard img {
+    width: 30%;
+}
+
+.waiting{
+    margin: auto;
+    font-size: 2rem;
+}
