@@ -15,7 +15,7 @@ const App = () => {
         } else {
             setNoData(false);
             try {
-                const {data: {results, total_results}} = axios.request('http://localhost:8080/search', {params: {query: query}})
+                const {data: {results, total_results}} = axios.request('https://movie-app-jacqueline.onrender.com/search', {params: {query: query}})
                 setMovies(results)
                 setTotal(total_results)
             } catch(err) {
