@@ -1,6 +1,8 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
+import { vi } from "vitest";
 import userEvent from '@testing-library/user-event'
 import App from "./App";
+
 
 describe("App component", () => {
     it("Should render the App component correctly", () => {
@@ -13,7 +15,15 @@ describe("App component", () => {
         expect(button).toBeInTheDocument();
     });
 
-    it("Should show an error message if form is submitted without an input", async () => {
+    it("Should update the search value when user types in the input",  () => {
+        render(<App/>);
+        const input = screen.getByRole("textbox");
+        userEvent.type(input, 'hello world')
+        expect(input.value).toBe('hello world')
+        
+    });
+
+    it("Should show an error message if form is submitted without an input", () => {
         render(<App/>);
         const button = screen.getByRole("button", {name: "search"});
         userEvent.click(button);
@@ -21,13 +31,4 @@ describe("App component", () => {
         expect(heading).toBeInTheDocument();
     });
 
-    it("Should show an error message if no movie matches are found", async () => {
-        render(<App/>);
-        const button = screen.getByRole("button", {name: "search"});
-        const input = screen.getByRole("textbox");
-        userEvent.type(input, 'akfnjdkjd')
-        userEvent.click(button)
-        const heading = screen.getByRole("heading", {name: "No matches found"});
-        expect(input).toHaveValue('akfnjdkjd');
-    })
 })

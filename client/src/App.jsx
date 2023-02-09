@@ -14,12 +14,13 @@ const App = () => {
             setNoData(true);
         } else {
             setNoData(false);
-            const response = await axios.request('http://localhost:8080/search', {params: {query: query}})
-            .then(res => {
-                setMovies(res.data.results)
-                setTotal(res.data.total_results)
-            })
-            .catch(err => console.error(err));
+            try {
+                const {data: {results, total_results}} = axios.request('http://localhost:8080/search', {params: {query: query}})
+                setMovies(results)
+                setTotal(total_results)
+            } catch(err) {
+                console.error(err)
+            }
         };
     };
 
@@ -27,7 +28,7 @@ const App = () => {
         e.preventDefault();
         fetchMovies(query)
     };
-console.log(movies)
+
     return (
         <div>
             <form onSubmit={searchMovies} id='formContainer'>
